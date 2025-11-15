@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static DotnetDownloader.Class.Globals.Obj;
+using static DotnetDownloader.Class.AppLogger;
 
 namespace DotnetDownloader.Utils
 {
