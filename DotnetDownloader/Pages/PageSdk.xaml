@@ -11,6 +11,13 @@
       Title="PageSdk" Loaded="Page_Loaded">
 
     <Grid>
-        <ctrl:UserVersionCard Title="123" Margin="10,97,-10,203"/>
+        <ListBox x:Name="listBox" Margin="20,20,20,20">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Padding" Value="0"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
     </Grid>
 </ui:Page>
