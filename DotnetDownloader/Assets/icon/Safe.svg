@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="48" viewBox="0 -960 960 960" width="48" fill="#1f1f1f" version="1.1" id="svg1"
+    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <defs id="defs1" />
+    <path
+        d="M 480,-80 Q 340,-115 250,-242.5 160,-370 160,-522 v -238 l 320,-120 320,120 v 238 q 0,152 -90,279.5 Q 620,-115 480,-80 Z m 0,-62 Q 586,-177 655.5,-270.5 725,-364 737,-480 H 480 v -335 l -260,97 v 196 q 0,12 0.5,20.5 0.5,8.5 2.5,21.5 h 257 z"
+        id="path1" />
+</svg>

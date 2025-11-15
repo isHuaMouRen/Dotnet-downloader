@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="DotnetDownloader.Controls.UserVersionCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DotnetDownloader.Controls"
+             mc:Ignorable="d" Height="150">
+    <Grid>
+        <Viewbox x:Name="viewBox_SDK" Width="130" Height="130" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,10,10" >
+            <Canvas Height="1024" Width="1024">
+                <Path Fill="#512bd4" Data="M217.5-.5h588c89.266 11.529 154.433 57.196 195.5 137 11.92 25.9 19.42 52.9 22.5 81v588c-11.53 89.266-57.196 154.433-137 195.5-25.9 11.92-52.9 19.42-81 22.5h-588c-89.266-11.53-154.433-57.196-195.5-137-11.917-25.9-19.417-52.9-22.5-81v-588C11.029 128.234 56.696 63.067 136.5 22c25.9-11.917 52.9-19.417 81-22.5z" />
+                <Path Fill="#fefefe" Data="M452.5 347.5v322h-58a44602.353 44602.353 0 00-152.5-236 365.497 365.497 0 01-10-19c.489 85.292.656 170.625.5 256h-51v-323a985.248 985.248 0 0162.5 1 48977.864 48977.864 0 01160 251 11115.12 11115.12 0 01-1.5-252h50z" />
+                <Path Fill="#fefefe" Data="M524.5 347.5h172v45h-120a2117.57 2117.57 0 001 92h110v45h-110a2304.214 2304.214 0 00-1 96h127v44h-179v-322zM959.5 392.5h-92v278h-53v-277h-92v-46h237v45z" />
+                <Path Fill="#fcfcfe" Data="M88.5 614.5c19.285-1.785 32.451 6.215 39.5 24 1.4 18.953-7.1 31.12-25.5 36.5-19.218 2.422-32.052-5.412-38.5-23.5-1.836-19.002 6.33-31.335 24.5-37z" />
+                <Path Fill="#fdfcfe" Data="M315.5 859.5c-.328-10.846.006-21.513 1-32 18.164 14.707 38.164 17.874 60 9.5 6.443-5.934 7.61-12.768 3.5-20.5a45.255 45.255 0 00-8.5-7.5l-32-15c-18.617-10.4-26.784-26.233-24.5-47.5 3.809-14.48 12.643-24.646 26.5-30.5 22.723-7.376 45.39-7.21 68 .5a150.545 150.545 0 01.5 30c-16.055-10.037-33.222-12.537-51.5-7.5-12.429 8.026-13.095 17.026-2 27a1363.17 1363.17 0 0038 19c19.129 11.768 25.963 28.601 20.5 50.5-4.073 13.073-12.573 21.906-25.5 26.5-24.989 7.904-49.656 7.07-74-2.5z" />
+                <Path Fill="#8f77e3" Data="M680.5 713.5c12.839-1.325 25.839-1.325 39 0-.124.607-.457.94-1 1a361.608 361.608 0 00-38-1z" />
+                <Path Fill="#fefefe" Data="M442.5 713.5c22.336-.167 44.669 0 67 .5 43.065 3.894 64.731 27.394 65 70.5.258 43.241-20.742 69.408-63 78.5a870.361 870.361 0 01-69 1.5v-151zM632.5 713.5c-.167 23.669 0 47.336.5 71 .717-.544 1.217-1.211 1.5-2a3798.424 3798.424 0 0146-69 361.608 361.608 0 0138 1 4184.904 4184.904 0 00-53 71l58 78a210.677 210.677 0 01-41 0 1375.344 1375.344 0 01-48-71c-.283-.789-.783-1.456-1.5-2-.5 24.664-.667 49.331-.5 74h-32v-151h32z" />
+                <Path Fill="#522cd4" Data="M474.5 739.5c16.938-2.035 32.938.798 48 8.5 13.016 10.036 19.349 23.37 19 40-.461 28.783-14.794 45.45-43 50-7.993.5-15.993.666-24 .5v-99z" />
+            </Canvas>
+        </Viewbox>
+
+        <TextBlock x:Name="textBlock_Title" Text="Title" VerticalAlignment="Top" Margin="160,10,10,0" FontWeight="Bold" FontSize="30"/>
+        <TextBlock x:Name="textBlock_Subtitle" Text="Subtitle" VerticalAlignment="Top" Margin="160,53,10,0" FontSize="15" Foreground="#FF646464"/>
+        <TextBlock x:Name="textBlock_Date" Text="Date" VerticalAlignment="Top" Margin="160,77,10,0" FontSize="15" Foreground="#FF646464"/>
+
+        <Grid x:Name="grid_Safe" Height="30" Margin="160,77,0,10" Width="85" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Rectangle Fill="#FF32FF32" RadiusY="15" RadiusX="15"/>
+            <Viewbox Height="20" Width="20" Stretch="Uniform" HorizontalAlignment="Left" Margin="10,0,0,0">
+                <Canvas Width="960" Height="960" RenderTransformOrigin="0.5,0.5">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="960"/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                    <Path Fill="#fff" Data="M 480,-80 Q 340,-115 250,-242.5 160,-370 160,-522 v -238 l 320,-120 320,120 v 238 q 0,152 -90,279.5 Q 620,-115 480,-80 Z m 0,-62 Q 586,-177 655.5,-270.5 725,-364 737,-480 H 480 v -335 l -260,97 v 196 q 0,12 0.5,20.5 0.5,8.5 2.5,21.5 h 257 z"/>
+                </Canvas>
+            </Viewbox>
+            <TextBlock Text="     安全" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+        </Grid>
+        <Grid x:Name="grid_unSafe" Height="30" Width="85" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="160,0,0,10">
+            <Rectangle Fill="#FFFF3232" RadiusY="15" RadiusX="15"/>
+            <Viewbox Height="20" Width="20" Stretch="Uniform" HorizontalAlignment="Left" Margin="10,0,0,0">
+                <Canvas Width="960" Height="960" RenderTransformOrigin="0.5,0.5">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="960"/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                    <Path Fill="#fff" Data="m 386,-345 94,-91 94,91 45,-45 -93,-91 93,-92 -45,-45 -94,91 -94,-91 -45,45 93,92 -93,91 z m 94,264 Q 340,-116 250,-243.5 160,-371 160,-523 v -238 l 320,-120 320,120 v 238 q 0,152 -90,279.5 Q 620,-116 480,-81 Z m 0,-62 Q 595,-181 667.5,-286.5 740,-392 740,-523 v -196 l -260,-98 -260,98 v 196 q 0,131 72.5,236.5 Q 365,-181 480,-143 Z m 0,-337 z"/>
+                </Canvas>
+            </Viewbox>
+            <TextBlock Text="    不安全" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Height="30" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="250,0,10,10">
+            <Rectangle Fill="#FFFFC832" RadiusY="15" RadiusX="15"/>
+            <TextBlock x:Name="textBlock_Rtype" Text="LTS" Foreground="White" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+    </Grid>
+</UserControl>
