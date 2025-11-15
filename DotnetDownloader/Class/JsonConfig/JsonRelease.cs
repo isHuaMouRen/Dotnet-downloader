@@ -1,0 +1,195 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DotnetDownloader.Class.JsonConfig
+{
+    public class JsonRelease
+    {
+        public partial class Release
+        {
+            [JsonProperty("channel-version")]
+            public string ChannelVersion { get; set; }
+
+            [JsonProperty("latest-release")]
+            public LatestRelease LatestRelease { get; set; }
+
+            [JsonProperty("latest-release-date")]
+            public DateTimeOffset LatestReleaseDate { get; set; }
+
+            [JsonProperty("latest-runtime")]
+            public LatestRelease LatestRuntime { get; set; }
+
+            [JsonProperty("latest-sdk")]
+            public string LatestSdk { get; set; }
+
+            [JsonProperty("support-phase")]
+            public string SupportPhase { get; set; }
+
+            [JsonProperty("release-type")]
+            public string ReleaseType { get; set; }
+
+            [JsonProperty("eol-date")]
+            public DateTimeOffset EolDate { get; set; }
+
+            [JsonProperty("lifecycle-policy")]
+            public Uri LifecyclePolicy { get; set; }
+
+            [JsonProperty("releases")]
+            public ReleaseElement[] Releases { get; set; }
+        }
+
+        public partial class ReleaseElement
+        {
+            [JsonProperty("release-date")]
+            public DateTimeOffset ReleaseDate { get; set; }
+
+            [JsonProperty("release-version")]
+            public string ReleaseVersion { get; set; }
+
+            [JsonProperty("security")]
+            public bool Security { get; set; }
+
+            [JsonProperty("cve-list", NullValueHandling = NullValueHandling.Ignore)]
+            public CveList[] CveList { get; set; }
+
+            [JsonProperty("release-notes")]
+            public Uri ReleaseNotes { get; set; }
+
+            [JsonProperty("runtime")]
+            public Runtime Runtime { get; set; }
+
+            [JsonProperty("sdk")]
+            public Sdk Sdk { get; set; }
+
+            [JsonProperty("sdks")]
+            public Sdk[] Sdks { get; set; }
+
+            [JsonProperty("aspnetcore-runtime")]
+            public AspnetcoreRuntime AspnetcoreRuntime { get; set; }
+
+            [JsonProperty("windowsdesktop")]
+            public Windowsdesktop Windowsdesktop { get; set; }
+        }
+
+        public partial class AspnetcoreRuntime
+        {
+            [JsonProperty("version")]
+            public string Version { get; set; }
+
+            [JsonProperty("version-display")]
+            public string VersionDisplay { get; set; }
+
+            [JsonProperty("version-aspnetcoremodule")]
+            public string[] VersionAspnetcoremodule { get; set; }
+
+            [JsonProperty("vs-version")]
+            public string VsVersion { get; set; }
+
+            [JsonProperty("files")]
+            public File[] Files { get; set; }
+        }
+
+        public partial class File
+        {
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("rid")]
+            public Rid Rid { get; set; }
+
+            [JsonProperty("url")]
+            public Uri Url { get; set; }
+
+            [JsonProperty("hash")]
+            public string Hash { get; set; }
+
+            [JsonProperty("akams", NullValueHandling = NullValueHandling.Ignore)]
+            public Uri Akams { get; set; }
+        }
+
+        public partial class CveList
+        {
+            [JsonProperty("cve-id")]
+            public string CveId { get; set; }
+
+            [JsonProperty("cve-url")]
+            public Uri CveUrl { get; set; }
+        }
+
+        public partial class Runtime
+        {
+            [JsonProperty("version")]
+            public string Version { get; set; }
+
+            [JsonProperty("version-display")]
+            public string VersionDisplay { get; set; }
+
+            [JsonProperty("vs-version")]
+            public LatestRelease VsVersion { get; set; }
+
+            [JsonProperty("vs-mac-version")]
+            public string VsMacVersion { get; set; }
+
+            [JsonProperty("files")]
+            public File[] Files { get; set; }
+        }
+
+        public partial class Sdk
+        {
+            [JsonProperty("version")]
+            public string Version { get; set; }
+
+            [JsonProperty("version-display")]
+            public string VersionDisplay { get; set; }
+
+            [JsonProperty("runtime-version")]
+            public string RuntimeVersion { get; set; }
+
+            [JsonProperty("vs-version")]
+            public LatestRelease VsVersion { get; set; }
+
+            [JsonProperty("vs-mac-version")]
+            public string VsMacVersion { get; set; }
+
+            [JsonProperty("vs-support")]
+            public VsSupport VsSupport { get; set; }
+
+            [JsonProperty("vs-mac-support")]
+            public string VsMacSupport { get; set; }
+
+            [JsonProperty("csharp-version")]
+            public string CsharpVersion { get; set; }
+
+            [JsonProperty("fsharp-version")]
+            public string FsharpVersion { get; set; }
+
+            [JsonProperty("vb-version")]
+            public string VbVersion { get; set; }
+
+            [JsonProperty("files")]
+            public File[] Files { get; set; }
+        }
+
+        public partial class Windowsdesktop
+        {
+            [JsonProperty("version")]
+            public string Version { get; set; }
+
+            [JsonProperty("version-display")]
+            public string VersionDisplay { get; set; }
+
+            [JsonProperty("files")]
+            public File[] Files { get; set; }
+        }
+
+        public enum LatestRelease { Empty, The1000, The1800 };
+
+        public enum Rid { Empty, LinuxArm, LinuxArm64, LinuxBionicArm64, LinuxBionicX64, LinuxMuslArm, LinuxMuslArm64, LinuxMuslX64, LinuxX64, OsxArm64, OsxX64, WinArm64, WinX64, WinX86 };
+
+        public enum VsSupport { Empty, VisualStudio2026V180, VisualStudio2026V180Preview1, VisualStudio2026V180Preview3 };
+    }
+}
