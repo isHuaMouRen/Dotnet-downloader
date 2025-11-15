@@ -20,16 +20,21 @@ namespace DotnetDownloader.Controls
     /// </summary>
     public partial class UserVersionCard : UserControl
     {
-        public string Title { get; set; } = "Title";
-        public string Subtitle { get; set; } = "Subtitle";
-        public string Date { get; set; } = "1970-1-1";
-        public bool IsSafe { get; set; } = true;
-        public string RType { get; set; } = "LTS";
+        public string Title { get; set; }
+        public string Subtitle { get; set; }
+        public string Date { get; set; }
+        public bool IsSafe { get; set; }
+        public string RType { get; set; }
 
         public UserVersionCard()
         {
             InitializeComponent();
 
+            Loaded += (s, e) => UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
             textBlock_Title.Text = Title;
             textBlock_Subtitle.Text = Subtitle;
             textBlock_Date.Text = Date;
