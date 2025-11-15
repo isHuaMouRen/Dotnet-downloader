@@ -15,7 +15,7 @@ namespace DotnetDownloader.Class.JsonConfig
             public string ChannelVersion { get; set; }
 
             [JsonProperty("last-updated")]
-            public DateTimeOffset LastUpdated { get; set; }
+            public string LastUpdated { get; set; }
 
             [JsonProperty("families")]
             public Family[] Families { get; set; }
@@ -45,13 +45,13 @@ namespace DotnetDownloader.Class.JsonConfig
             public string Name { get; set; }
 
             [JsonProperty("link")]
-            public Uri Link { get; set; }
+            public string Link { get; set; }
 
             [JsonProperty("lifecycle", NullValueHandling = NullValueHandling.Ignore)]
-            public Uri Lifecycle { get; set; }
+            public string Lifecycle { get; set; }
 
             [JsonProperty("architectures")]
-            public Architecture[] Architectures { get; set; }
+            public string[] Architectures { get; set; }
 
             [JsonProperty("supported-versions")]
             public string[] SupportedVersions { get; set; }
@@ -66,7 +66,7 @@ namespace DotnetDownloader.Class.JsonConfig
             public string Name { get; set; }
 
             [JsonProperty("architectures")]
-            public Architecture[] Architectures { get; set; }
+            public string[] Architectures { get; set; }
 
             [JsonProperty("version")]
             public string Version { get; set; }
@@ -74,7 +74,5 @@ namespace DotnetDownloader.Class.JsonConfig
             [JsonProperty("source")]
             public string Source { get; set; }
         }
-
-        public enum Architecture { Arm32, Arm64, Ppc64Le, S390X, X64 };
     }
 }

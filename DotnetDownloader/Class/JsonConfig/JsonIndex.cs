@@ -24,7 +24,7 @@ namespace DotnetDownloader.Class.JsonConfig
             public string LatestRelease { get; set; }
 
             [JsonProperty("latest-release-date")]
-            public DateTimeOffset LatestReleaseDate { get; set; }
+            public string LatestReleaseDate { get; set; }
 
             [JsonProperty("security")]
             public bool Security { get; set; }
@@ -36,28 +36,22 @@ namespace DotnetDownloader.Class.JsonConfig
             public string LatestSdk { get; set; }
 
             [JsonProperty("product")]
-            public Product Product { get; set; }
+            public string Product { get; set; }
 
             [JsonProperty("support-phase")]
-            public SupportPhase SupportPhase { get; set; }
+            public string SupportPhase { get; set; }
 
             [JsonProperty("eol-date")]
-            public DateTimeOffset EolDate { get; set; }
+            public string EolDate { get; set; }
 
             [JsonProperty("release-type")]
-            public ReleaseType ReleaseType { get; set; }
+            public string ReleaseType { get; set; }
 
             [JsonProperty("releases.json")]
-            public Uri ReleasesJson { get; set; }
+            public string ReleasesJson { get; set; }
 
             [JsonProperty("supported-os.json", NullValueHandling = NullValueHandling.Ignore)]
-            public Uri SupportedOsJson { get; set; }
+            public string SupportedOsJson { get; set; }
         }
-
-        public enum Product { Net, NetCore };
-
-        public enum ReleaseType { Lts, Sts };
-
-        public enum SupportPhase { Active, Eol };
     }
 }

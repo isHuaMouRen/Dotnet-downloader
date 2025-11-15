@@ -15,13 +15,13 @@ namespace DotnetDownloader.Class.JsonConfig
             public string ChannelVersion { get; set; }
 
             [JsonProperty("latest-release")]
-            public LatestRelease LatestRelease { get; set; }
+            public string LatestRelease { get; set; }
 
             [JsonProperty("latest-release-date")]
-            public DateTimeOffset LatestReleaseDate { get; set; }
+            public string LatestReleaseDate { get; set; }
 
             [JsonProperty("latest-runtime")]
-            public LatestRelease LatestRuntime { get; set; }
+            public string LatestRuntime { get; set; }
 
             [JsonProperty("latest-sdk")]
             public string LatestSdk { get; set; }
@@ -33,10 +33,10 @@ namespace DotnetDownloader.Class.JsonConfig
             public string ReleaseType { get; set; }
 
             [JsonProperty("eol-date")]
-            public DateTimeOffset EolDate { get; set; }
+            public string EolDate { get; set; }
 
             [JsonProperty("lifecycle-policy")]
-            public Uri LifecyclePolicy { get; set; }
+            public string LifecyclePolicy { get; set; }
 
             [JsonProperty("releases")]
             public ReleaseElement[] Releases { get; set; }
@@ -45,7 +45,7 @@ namespace DotnetDownloader.Class.JsonConfig
         public partial class ReleaseElement
         {
             [JsonProperty("release-date")]
-            public DateTimeOffset ReleaseDate { get; set; }
+            public string ReleaseDate { get; set; }
 
             [JsonProperty("release-version")]
             public string ReleaseVersion { get; set; }
@@ -57,7 +57,7 @@ namespace DotnetDownloader.Class.JsonConfig
             public CveList[] CveList { get; set; }
 
             [JsonProperty("release-notes")]
-            public Uri ReleaseNotes { get; set; }
+            public string ReleaseNotes { get; set; }
 
             [JsonProperty("runtime")]
             public Runtime Runtime { get; set; }
@@ -99,16 +99,16 @@ namespace DotnetDownloader.Class.JsonConfig
             public string Name { get; set; }
 
             [JsonProperty("rid")]
-            public Rid Rid { get; set; }
+            public string Rid { get; set; }
 
             [JsonProperty("url")]
-            public Uri Url { get; set; }
+            public string Url { get; set; }
 
             [JsonProperty("hash")]
             public string Hash { get; set; }
 
             [JsonProperty("akams", NullValueHandling = NullValueHandling.Ignore)]
-            public Uri Akams { get; set; }
+            public string Akams { get; set; }
         }
 
         public partial class CveList
@@ -129,7 +129,7 @@ namespace DotnetDownloader.Class.JsonConfig
             public string VersionDisplay { get; set; }
 
             [JsonProperty("vs-version")]
-            public LatestRelease VsVersion { get; set; }
+            public string VsVersion { get; set; }
 
             [JsonProperty("vs-mac-version")]
             public string VsMacVersion { get; set; }
@@ -150,13 +150,13 @@ namespace DotnetDownloader.Class.JsonConfig
             public string RuntimeVersion { get; set; }
 
             [JsonProperty("vs-version")]
-            public LatestRelease VsVersion { get; set; }
+            public string VsVersion { get; set; }
 
             [JsonProperty("vs-mac-version")]
             public string VsMacVersion { get; set; }
 
             [JsonProperty("vs-support")]
-            public VsSupport VsSupport { get; set; }
+            public string VsSupport { get; set; }
 
             [JsonProperty("vs-mac-support")]
             public string VsMacSupport { get; set; }
@@ -185,11 +185,5 @@ namespace DotnetDownloader.Class.JsonConfig
             [JsonProperty("files")]
             public File[] Files { get; set; }
         }
-
-        public enum LatestRelease { Empty, The1000, The1800 };
-
-        public enum Rid { Empty, LinuxArm, LinuxArm64, LinuxBionicArm64, LinuxBionicX64, LinuxMuslArm, LinuxMuslArm64, LinuxMuslX64, LinuxX64, OsxArm64, OsxX64, WinArm64, WinX64, WinX86 };
-
-        public enum VsSupport { Empty, VisualStudio2026V180, VisualStudio2026V180Preview1, VisualStudio2026V180Preview3 };
     }
 }
