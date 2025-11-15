@@ -20,12 +20,11 @@ namespace DotnetDownloader.Controls
     /// </summary>
     public partial class UserVersionCard : UserControl
     {
-        public string Title = "Title";
-        public string Subtitle = "Subtitle";
-        public string Date = "1970-1-1";
-        public bool isSafe = true;
-        public string Rtype = "LTS";
-
+        public string Title { get; set; } = "Title";
+        public string Subtitle { get; set; } = "Subtitle";
+        public string Date { get; set; } = "1970-1-1";
+        public bool IsSafe { get; set; } = true;
+        public string RType { get; set; } = "LTS";
 
         public UserVersionCard()
         {
@@ -34,15 +33,10 @@ namespace DotnetDownloader.Controls
             textBlock_Title.Text = Title;
             textBlock_Subtitle.Text = Subtitle;
             textBlock_Date.Text = Date;
-            textBlock_Rtype.Text = Rtype;
+            textBlock_Rtype.Text = RType;
 
-            grid_Safe.Visibility = Visibility.Hidden;
-            grid_unSafe.Visibility = Visibility.Hidden;
-
-            if (isSafe)
-                grid_Safe.Visibility = Visibility.Visible;
-            else
-                grid_unSafe.Visibility = Visibility.Visible;
+            grid_Safe.Visibility = IsSafe ? Visibility.Visible : Visibility.Collapsed;
+            grid_unSafe.Visibility = IsSafe ? Visibility.Collapsed : Visibility.Visible;
         }
     }
 }
