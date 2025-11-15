@@ -9,7 +9,7 @@ namespace DotnetDownloader.Class.JsonConfig
 {
     public class JsonSupportOs
     {
-        public partial class SupportedOs
+        public partial class Index
         {
             [JsonProperty("channel-version")]
             public string ChannelVersion { get; set; }
